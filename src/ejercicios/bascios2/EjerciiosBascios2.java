@@ -174,8 +174,29 @@ public class EjerciiosBascios2 {
         while(salto%7!=0){
             salto++;
             System.out.print("XX "); 
+        }       
+    }
+    
+    public boolean escaleraDePalabras(char[][]listaPalabras){
+      
+        int numero = listaPalabras.length;
+        int auxiliar=0;
+        
+        for(int i = 1;i<listaPalabras.length;i++){
+            for(int j =0; j < listaPalabras[i].length;j++){
+                if(listaPalabras[i-1][j]!=listaPalabras[i][j]){
+                       auxiliar++;
+            
+                } 
+            }
         }
        
+        if(auxiliar==numero-1){
+            
+            return true;
+        }
+        
+      return false;  
     }
   
 
@@ -188,7 +209,23 @@ public class EjerciiosBascios2 {
         System.out.println(ejercicios.isograma("murcielago" ));
         System.out.println(ejercicios.acronimo("Tecnologia de la infrmacion y de las Comunicaciones"));
         System.out.println(ejercicios.anagrama("roma paso","amo rsapo"));
-        ejercicios.calendario(5);
+        ejercicios.calendario(1);
+                
+        	char	[][]	listaPalabras	=	{
+                    	{'P',	'A',	'T',	'A',    'S'},
+                    	{'P',	'A',	'T',	'O',    'S'},
+                        {'R',	'A',	'T',	'O',    'S'},
+                        {'R',	'A',	'M',	'O',    'S'},
+                        {'G',	'A',	'M',	'O',    'S'},
+                        {'G',	'A',	'T',	'O',    'S'},
+                        {'M',	'A',	'T',	'O',    'S'},
+                        {'T',	'A',	'T',	'O',    'S'},
+                        {'T',	'A',	'T',	'U',    'S'},
+                        {'T',	'A',	'B',	'U',    'S'},
+                        {'Y',	'A',	'B',	'U',    'S'},
+                        {'Y',	'A',	'B',	'U',    'Y'},
+                };
+        System.out.println(ejercicios.escaleraDePalabras(listaPalabras));
     }
     
 }
