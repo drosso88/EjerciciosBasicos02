@@ -284,31 +284,49 @@ public class EjerciiosBascios2 {
         //suponemos que la longitud de str1 es mayor que la longitud de str2
         int numeroStr1 = str1.length();
         int numeroStr2 = str2.length();
-        
-        int posicion=0;
+
+        int posicion = 0;
         int auxiliar = 0;
 
-        for (int i = 0; i < numeroStr1-1; i++) {
+        for (int i = 0; i < numeroStr1 - 1; i++) {
             //si se cumple eso se activa el "marcador" de la posicion , literalmente dice
             // si el digito en la cadena str1 en la posicion i y en la posicion auxiliar
             //de la cadena str2 coinciden y ademas los siguientes digitos tmb coinciden 
             // auxiliar empieza sumar , si esta toda la cadena seguida contenida en str1
             // entonces auxiliar valdra lo mismo que la longitud de  la cadena str2
-            if(str1.charAt(i)==str2.charAt(auxiliar) && auxiliar<=numeroStr2 
-               && str1.charAt(i+1)==str2.charAt(auxiliar+1)){
-                        auxiliar++; 
+            if (str1.charAt(i) == str2.charAt(auxiliar) && auxiliar <= numeroStr2
+                    && str1.charAt(i + 1) == str2.charAt(auxiliar + 1)) {
+                auxiliar++;
             }
-            if(auxiliar==1){
-                posicion=i;
+            if (auxiliar == 1) {
+                posicion = i;
             }
-            if (auxiliar+1== numeroStr2) {
+            if (auxiliar + 1 == numeroStr2) {
                 System.out.print("El contenido esta contenible en la posicion :");
-               return posicion;
+                return posicion;
             }
         }
-      
+
         System.out.print("ya tu sabe !!!! sigue dando a la ruleta esta vaina no funciona!");
         return -1;
+    }
+
+    public boolean cabeCaja(boolean[][] camion, int anchoCaja, int largoCaja) {
+        int anchoCamion = 0;
+        int largoCamion = 0;
+        int diagonal = 0;
+
+        for(int i = 0; i < camion.length-1; i++){
+            for(int j = 0; j < camion[i].length-1; j++){
+                //bloques de dos
+               
+            }
+           
+        }
+        System.out.print(largoCamion);
+        System.out.print(anchoCamion);
+        //System.out.print(diagonal);
+        return false;
     }
 
     public static void main(String[] args) {
@@ -336,6 +354,15 @@ public class EjerciiosBascios2 {
         System.out.println(ejercicios.escaleraDePalabras(listaPalabras));
         System.out.println(ejercicios.costeErroresADN("GGGA-GAATATCTGGACT", "CCCTACTTA-AGACCGGT"));
         System.out.println(ejercicios.contenidoContenible("repala mpago", "la mp"));
+        boolean[][] camion = {
+            {true, true, true, true, true, true, true, true},
+            {true, false, false, true, true, true, true, true},
+            {true, true, false, false, true, true, true, true},
+            {true, true, true, false, false, true, false, false},
+            {true, true, true, true, true, true, false, false},};
+        System.out.println(ejercicios.cabeCaja(camion, 3, 3));
+
     }
 
 }
+ 
